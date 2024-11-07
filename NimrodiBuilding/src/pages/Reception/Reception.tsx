@@ -10,7 +10,9 @@ const Reception: React.FC = () => {
   const floorAccess = useSelector(
     (state: { floorAccess: { floorAccess: [boolean, boolean, boolean, boolean, boolean] } }) => state.floorAccess.floorAccess
   );
-  const currentRole = useSelector((state: { role: string }) => state.role);
+
+  const currentRole = useSelector((state: { role: { role: string } }) => state.role);
+  
   const { getFloorByIndex } = useBuildingData();
   const dispatch = useDispatch();
 
@@ -53,7 +55,7 @@ const Reception: React.FC = () => {
           <div
             key={index}
             onClick={() => handleSetRole(index)}
-            className={`box ${role === currentRole ? "blue" : "red"}`}
+            className={`box ${role === currentRole.role ? "blue" : "red"}`}
             role="button"
             tabIndex={0}
             onKeyPress={(e) => e.key === "Enter" && handleSetRole(index)}

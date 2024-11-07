@@ -18,6 +18,7 @@ export const floorSlice  = createSlice({
         changeAccess: (state: accessState, action: PayloadAction<number>) => {
             if(!state.floorAccess[action.payload]){
                 state.floorAccess[action.payload] = true
+                return
             }
             state.floorAccess[action.payload] = false
         }

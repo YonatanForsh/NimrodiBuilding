@@ -2,12 +2,12 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import { floorSlice } from "./floorreducer";
-import { roleSlice } from "./Rolereducer";
+import { roleSlice } from "./rolereducer";
 
 export default configureStore({
     reducer: {
-      floors: floorSlice.reducer,
-      roles: roleSlice.reducer,
+      floorAccess: floorSlice.reducer,
+      role: roleSlice.reducer,
     },
   });
   
