@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface Floor {
+ export interface Floor {
   name: string;
   soldiers: number;
   purpose: string;
