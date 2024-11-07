@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import roles from "../data/roles.json"
+import { act } from "react-dom/test-utils";
 
 //FILL HERE 3.2
 const initialState = {
@@ -14,11 +15,9 @@ export const floorSlice  = createSlice({
     name: "access",
     initialState,
     reducers: {
-        changeAccess: (state: roleState, action: PayloadAction<number>) => {
-            if(!state.floorAccess[action.payload]){
-                state.floorAccess[action.payload] = true
-            }
-            state.floorAccess[action.payload] = false
+        setRole: (state: roleState, action: PayloadAction<string>) => {
+            state.role = action.payload
         }
+        
     }
-})
+});
