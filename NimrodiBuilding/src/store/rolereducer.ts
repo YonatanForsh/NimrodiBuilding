@@ -11,13 +11,12 @@ interface roleState{
     role: string
 };
 
-export const floorSlice  = createSlice({
-    name: "access",
+export const roleSlice  = createSlice({
+    name: "role",
     initialState,
     reducers: {
         setRole: (state: roleState, action: PayloadAction<string>) => {
             state.role = action.payload
-        }
-        
+        }   
     }
 });

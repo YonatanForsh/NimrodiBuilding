@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import floors from "../data/building.json"
 
  export interface Floor {
   name: string;
@@ -17,6 +18,9 @@ const useBuildingData = () => {
   const getFloorByIndex = (floorIndex:number): Floor |undefined =>
   {
     //FILL HERE
+    if (floors){
+    return floors[floorIndex]
+    }
   }
   const getListOfActivities = ():string[]=>{
     //FILL HERE
